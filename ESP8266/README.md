@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project-MicroSmart
 Project : IoT By Microtronic.biz
 
@@ -29,3 +30,7 @@ const int mqtt_port = 1883;
 
 
 สร้างโบรกเกอร์ เราได้ใช้เมธอด _setServer_ วิธีนี้ใช้สองอาร์กิวเมนต์ที่เราได้กำหนดไว้ล่วงหน้าแล้ว ตอนนี้ ถ้าเราต้องการรับข้อความจากเซิร์ฟเวอร์ เราต้องสร้างฟังก์ชันเรียกกลับ เพื่อที่เราจะใช้ _setCallback (callback)_ วิธีการ
+=======
+# Project-MicroSmart
+Project : IoT By Microtronic.biz
+>>>>>>> main
