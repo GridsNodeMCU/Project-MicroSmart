@@ -6,7 +6,7 @@
 
 const char* ssid = "pi.netgear"; 
 const char* password = "domnickhunterrl"; 
-const char* mqtt_server = "192.168.1.16"; 
+const char* mqtt_server = "broker.hivemq.com"; 
 const int mqtt_port = 1883;
 
 WiFiClient espClient;
@@ -60,11 +60,11 @@ void MQTTcallback(char* topic, byte* payload, unsigned int length) {
   Serial.print(message);
   if (message == "on") 
   {
-    digitalWrite(LED, LOW);
+    digitalWrite(LED, HIGH);
   }
   else if (message == "off") 
   {
-    digitalWrite(LED, HIGH);
+    digitalWrite(LED, LOW);
   }
   Serial.println();
   Serial.println("-----------------------");
@@ -75,7 +75,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   if(digitalRead(D1)==0)
   {
-  client.publish("esp/test", "Hello from ESP8266");
+  client.publish("esp/test1", "Hello from ESP8266");
   delay(1000);
   }
   else;
