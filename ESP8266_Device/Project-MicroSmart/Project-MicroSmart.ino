@@ -1,4 +1,3 @@
-
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
@@ -6,7 +5,7 @@
 
 const char* ssid = "pi.netgear"; 
 const char* password = "domnickhunterrl"; 
-const char* mqtt_server = "broker.hivemq.com"; 
+const char* mqtt_server = "192.168.1.17"; 
 const int mqtt_port = 1883;
 
 WiFiClient espClient;
@@ -44,7 +43,7 @@ void setup() {
       delay(2000);
     }
   }
-  client.subscribe("esp/test");
+  client.subscribe("test/message");
 }
 
 // Function Callback
@@ -75,7 +74,8 @@ void loop() {
   // put your main code here, to run repeatedly:
   if(digitalRead(D1)==0)
   {
-  client.publish("esp/test1", "Hello from ESP8266");
+    // Sent Pull-Up Button Status
+  client.publish("test/message1", "Button Status 0");
   delay(1000);
   }
   else;
