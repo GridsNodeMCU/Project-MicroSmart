@@ -32,15 +32,12 @@ void setup() {
 
   while (!client.connected()) {
     Serial.println("Connecting to MQTT...");
-    if (client.connect("ESP8266"))
-    {
-      Serial.println("connected");
-    }
-    else
-    {
-      Serial.print("failed with state ");
-      Serial.println(client.state());
-      delay(2000);
+    if (client.connect("ESP8266")) {
+        Serial.println("connected");
+    } else {
+        Serial.print("failed with state ");
+        Serial.println(client.state());
+        delay(2000);
     }
   }
   client.subscribe("test/message");
